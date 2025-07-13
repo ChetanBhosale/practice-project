@@ -1,0 +1,21 @@
+{
+  "name": "@repo/common",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./index.ts",
+    "./secrets": "./secret.ts",
+    "./types": "./types.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "zod": "^4.0.5"
+  }
+}
