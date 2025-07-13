@@ -53,11 +53,10 @@ export const logout = async (token: string): Promise<ApiResponse<null>> => {
     const response = await axios.post(`${BACKEND_URL}/auth/logout`, null, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    // Clear token from localStorage regardless of API response
+
     localStorage.removeItem("jwt_token");
     return response.data;
   } catch (error) {
-    // Even if API fails, ensure client-side cleanup
     localStorage.removeItem("jwt_token");
     throw error;
   }
